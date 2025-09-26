@@ -1,13 +1,13 @@
-package br.edu.infnet.karla_parent;
+package br.edu.infnet.multi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KarlaParentApplication {
+public class ExternalApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(KarlaParentApplication.class, args);
+		SpringApplication.run(ExternalApiApplication.class, args);
 	}
 
 }
