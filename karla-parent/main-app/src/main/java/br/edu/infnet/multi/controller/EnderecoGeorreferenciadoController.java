@@ -1,6 +1,7 @@
 package br.edu.infnet.multi.controller;
 
 
+import br.edu.infnet.multi.model.domain.entities.EnderecoGeorreferenciado;
 import br.edu.infnet.multi.model.dto.out.EnderecoGeorreferenciadoResponseDTO;
 import br.edu.infnet.multi.model.service.EnderecoGeorreferenciadoService;
 import org.springframework.http.ResponseEntity;
@@ -23,9 +24,6 @@ public class EnderecoGeorreferenciadoController {
     @GetMapping("/{cep}")
     public ResponseEntity<EnderecoGeorreferenciadoResponseDTO> obterLocalidade(@PathVariable String cep) {
 
-        EnderecoGeorreferenciadoResponseDTO enderecoGeorreferenciado =
-                enderecoGeorreferenciadoService.obterEnderecoGeorreferenciadoPorCep(cep);
-
-        return ResponseEntity.ok(enderecoGeorreferenciado);
+        return ResponseEntity.ok( enderecoGeorreferenciadoService.obterEnderecoGeorreferenciadoPorCep(cep));
     }
 }

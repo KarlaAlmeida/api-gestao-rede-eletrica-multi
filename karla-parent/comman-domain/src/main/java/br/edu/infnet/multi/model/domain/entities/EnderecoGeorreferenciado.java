@@ -52,8 +52,8 @@ public class EnderecoGeorreferenciado {
 
     @Override
     public String toString() {
-        return String.format("id %d, cep %s, logradouro %s, complemento %s, bairro %s, localidade %s, uf %s," +
-                        " latitude %s, longitude %s",
+        return String.format("id %d, cep %s, logradouro %s, complemento %s, bairro %s, localidade %s, " +
+                        "uf %s, latitude %s, longitude %s",
                 id, cep, logradouro, complemento, bairro, localidade, uf, latitude, longitude);
     }
 

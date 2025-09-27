@@ -1,7 +1,6 @@
 package br.edu.infnet.multi.clients;
 
-import br.edu.infnet.multi.model.domain.entities.Endereco;
-
+import br.edu.infnet.multi.model.domain.entities.EnderecoGeorreferenciado;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,5 +9,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface ViaCepFeignClient {
 
     @GetMapping("/{cep}/json/")
-    Endereco findByCep(@PathVariable String cep);
+    EnderecoGeorreferenciado findByCep(@PathVariable String cep);
 }
