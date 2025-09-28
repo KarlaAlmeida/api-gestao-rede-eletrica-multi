@@ -6,6 +6,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication(scanBasePackages = "br.edu.infnet.multi")
 @EnableFeignClients(basePackages = "br.edu.infnet.multi.clients")
+
 public class MainAppApplication {
 
 	public static void main(String[] args) {

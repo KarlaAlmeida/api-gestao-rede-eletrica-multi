@@ -12,7 +12,6 @@
 	<artifactId>main-app</artifactId>
 	<name>main-app</name>
 	<description>Aplicação principal</description>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -58,6 +57,7 @@
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
+
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -74,7 +74,6 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-
 
 	</dependencies>
 

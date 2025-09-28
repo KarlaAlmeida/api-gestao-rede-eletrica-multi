@@ -28,7 +28,6 @@ public class OcorrenciaResponseDTO {
     private StatusOcorrencia statusOcorrencia;
 
     private List<OrdemServicoResponseDTO> ordensServico = new ArrayList<>();
-    private List<Integer> idOS;
     
     public OcorrenciaResponseDTO(Ocorrencia ocorrencia){
         this.setId(ocorrencia.getId());

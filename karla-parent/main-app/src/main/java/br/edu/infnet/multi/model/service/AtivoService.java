@@ -41,12 +41,12 @@ public class AtivoService{
         EnderecoGeorreferenciado enderecoGeorreferenciado = new EnderecoGeorreferenciado();
         enderecoGeorreferenciado.setCep(enderecoGeorreferenciadoResponseDTO.getCep());
         enderecoGeorreferenciado.setLogradouro(enderecoGeorreferenciadoResponseDTO.getLogradouro());
-        enderecoGeorreferenciadoResponseDTO.setComplemento(enderecoGeorreferenciado.getComplemento());
-        enderecoGeorreferenciadoResponseDTO.setBairro(enderecoGeorreferenciadoResponseDTO.getBairro());
-        enderecoGeorreferenciadoResponseDTO.setLocalidade(enderecoGeorreferenciadoResponseDTO.getLocalidade());
-        enderecoGeorreferenciadoResponseDTO.setUf(enderecoGeorreferenciadoResponseDTO.getUf());
-        enderecoGeorreferenciadoResponseDTO.setLatitude(enderecoGeorreferenciadoResponseDTO.getLatitude());
-        enderecoGeorreferenciadoResponseDTO.setLongitude(enderecoGeorreferenciadoResponseDTO.getLongitude());
+        enderecoGeorreferenciado.setComplemento(enderecoGeorreferenciadoResponseDTO.getComplemento());
+        enderecoGeorreferenciado.setBairro(enderecoGeorreferenciadoResponseDTO.getBairro());
+        enderecoGeorreferenciado.setLocalidade(enderecoGeorreferenciadoResponseDTO.getLocalidade());
+        enderecoGeorreferenciado.setUf(enderecoGeorreferenciadoResponseDTO.getUf());
+        enderecoGeorreferenciado.setLatitude(enderecoGeorreferenciadoResponseDTO.getLatitude());
+        enderecoGeorreferenciado.setLongitude(enderecoGeorreferenciadoResponseDTO.getLongitude());
 
         ativo.setEndereco(enderecoGeorreferenciado);
 
@@ -70,12 +70,12 @@ public class AtivoService{
         EnderecoGeorreferenciado enderecoGeorreferenciado = new EnderecoGeorreferenciado();
         enderecoGeorreferenciado.setCep(enderecoGeorreferenciadoResponseDTO.getCep());
         enderecoGeorreferenciado.setLogradouro(enderecoGeorreferenciadoResponseDTO.getLogradouro());
-        enderecoGeorreferenciadoResponseDTO.setComplemento(enderecoGeorreferenciado.getComplemento());
-        enderecoGeorreferenciadoResponseDTO.setBairro(enderecoGeorreferenciadoResponseDTO.getBairro());
-        enderecoGeorreferenciadoResponseDTO.setLocalidade(enderecoGeorreferenciadoResponseDTO.getLocalidade());
-        enderecoGeorreferenciadoResponseDTO.setUf(enderecoGeorreferenciadoResponseDTO.getUf());
-        enderecoGeorreferenciadoResponseDTO.setLatitude(enderecoGeorreferenciadoResponseDTO.getLatitude());
-        enderecoGeorreferenciadoResponseDTO.setLongitude(enderecoGeorreferenciadoResponseDTO.getLongitude());
+        enderecoGeorreferenciado.setComplemento(enderecoGeorreferenciadoResponseDTO.getComplemento());
+        enderecoGeorreferenciado.setBairro(enderecoGeorreferenciadoResponseDTO.getBairro());
+        enderecoGeorreferenciado.setLocalidade(enderecoGeorreferenciadoResponseDTO.getLocalidade());
+        enderecoGeorreferenciado.setUf(enderecoGeorreferenciadoResponseDTO.getUf());
+        enderecoGeorreferenciado.setLatitude(enderecoGeorreferenciadoResponseDTO.getLatitude());
+        enderecoGeorreferenciado.setLongitude(enderecoGeorreferenciadoResponseDTO.getLongitude());
 
         ativo.setEndereco(enderecoGeorreferenciado);
 

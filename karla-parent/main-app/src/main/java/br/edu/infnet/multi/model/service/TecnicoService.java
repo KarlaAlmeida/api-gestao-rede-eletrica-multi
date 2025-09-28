@@ -43,13 +43,14 @@ public class TecnicoService{
         EnderecoGeorreferenciadoResponseDTO enderecoGeorreferenciadoResponseDTO =
                 enderecoGeorreferenciadoService.obterEnderecoGeorreferenciadoPorCep(cepLimpo);
 
+
         EnderecoGeorreferenciado enderecoGeorreferenciado = new EnderecoGeorreferenciado();
         enderecoGeorreferenciado.setCep(enderecoGeorreferenciadoResponseDTO.getCep());
         enderecoGeorreferenciado.setLogradouro(enderecoGeorreferenciadoResponseDTO.getLogradouro());
-        enderecoGeorreferenciadoResponseDTO.setComplemento(enderecoGeorreferenciado.getComplemento());
-        enderecoGeorreferenciadoResponseDTO.setBairro(enderecoGeorreferenciadoResponseDTO.getBairro());
-        enderecoGeorreferenciadoResponseDTO.setLocalidade(enderecoGeorreferenciadoResponseDTO.getLocalidade());
-        enderecoGeorreferenciadoResponseDTO.setUf(enderecoGeorreferenciadoResponseDTO.getUf());
+        enderecoGeorreferenciado.setComplemento(enderecoGeorreferenciadoResponseDTO.getComplemento());
+        enderecoGeorreferenciado.setBairro(enderecoGeorreferenciadoResponseDTO.getBairro());
+        enderecoGeorreferenciado.setLocalidade(enderecoGeorreferenciadoResponseDTO.getLocalidade());
+        enderecoGeorreferenciado.setUf(enderecoGeorreferenciadoResponseDTO.getUf());
         enderecoGeorreferenciado.setNumero(tecnicoRequestDTO.getNumero());
         enderecoGeorreferenciado.setComplementoNumero(tecnicoRequestDTO.getComplementoNumero());
 
@@ -82,12 +83,10 @@ public class TecnicoService{
         EnderecoGeorreferenciado enderecoGeorreferenciado = new EnderecoGeorreferenciado();
         enderecoGeorreferenciado.setCep(enderecoGeorreferenciadoResponseDTO.getCep());
         enderecoGeorreferenciado.setLogradouro(enderecoGeorreferenciadoResponseDTO.getLogradouro());
-        enderecoGeorreferenciadoResponseDTO.setComplemento(enderecoGeorreferenciado.getComplemento());
-        enderecoGeorreferenciadoResponseDTO.setBairro(enderecoGeorreferenciadoResponseDTO.getBairro());
-        enderecoGeorreferenciadoResponseDTO.setLocalidade(enderecoGeorreferenciadoResponseDTO.getLocalidade());
-        enderecoGeorreferenciadoResponseDTO.setUf(enderecoGeorreferenciadoResponseDTO.getUf());
-        enderecoGeorreferenciado.setNumero(tecnicoAtualizado.getNumero());
-        enderecoGeorreferenciado.setComplementoNumero(tecnicoAtualizado.getComplementoNumero());
+        enderecoGeorreferenciado.setComplemento(enderecoGeorreferenciadoResponseDTO.getComplemento());
+        enderecoGeorreferenciado.setBairro(enderecoGeorreferenciadoResponseDTO.getBairro());
+        enderecoGeorreferenciado.setLocalidade(enderecoGeorreferenciadoResponseDTO.getLocalidade());
+        enderecoGeorreferenciado.setUf(enderecoGeorreferenciadoResponseDTO.getUf());
         enderecoGeorreferenciado.setNumero(tecnicoAtualizado.getNumero());
         enderecoGeorreferenciado.setComplementoNumero(tecnicoAtualizado.getComplementoNumero());
 
