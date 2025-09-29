@@ -1,10 +1,10 @@
 package br.edu.infnet.multi.controller;
 
 
-import br.edu.infnet.multi.model.domain.entities.EnderecoGeorreferenciado;
 import br.edu.infnet.multi.model.dto.out.EnderecoGeorreferenciadoResponseDTO;
 import br.edu.infnet.multi.model.service.EnderecoGeorreferenciadoService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +22,7 @@ public class EnderecoGeorreferenciadoController {
     }
 
     @GetMapping("/{cep}")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<EnderecoGeorreferenciadoResponseDTO> obterLocalidade(@PathVariable String cep) {
 
         return ResponseEntity.ok( enderecoGeorreferenciadoService.obterEnderecoGeorreferenciadoPorCep(cep));

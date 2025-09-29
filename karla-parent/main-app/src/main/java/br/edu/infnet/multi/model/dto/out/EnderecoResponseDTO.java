@@ -19,7 +19,7 @@ public class EnderecoResponseDTO {
     private String bairro;
     private String localidade;
     private String uf;
-    private int numero;
+    private Integer numero;
     private String complementoNumero;
 
     public EnderecoResponseDTO(EnderecoGeorreferenciado enderecoGeorreferenciado) {

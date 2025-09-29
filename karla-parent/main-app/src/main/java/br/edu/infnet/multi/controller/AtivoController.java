@@ -7,6 +7,7 @@ import br.edu.infnet.multi.model.service.AtivoService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,11 +23,13 @@ public class AtivoController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<AtivoResponseDTO> incluir(@Valid @RequestBody AtivoRequestDTO ativoDTO) {
         return ResponseEntity.status(HttpStatus.CREATED).body(ativoService.incluir(ativoDTO));
     }
 
     @PutMapping(value = "/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<AtivoResponseDTO> alterar(@PathVariable Integer id,
                                          @Valid @RequestBody AtivoRequestDTO ativoDTO) {
 
@@ -38,17 +41,20 @@ public class AtivoController {
     }
 
     @PatchMapping(value = "/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<AtivoResponseDTO> alterarStatus(@PathVariable Integer id,
                                                @RequestParam String status){
         return ResponseEntity.ok(ativoService.alterarStatus(id, status));
     }
 
     @GetMapping(value = "/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<AtivoResponseDTO> obterPorId(@PathVariable Integer id){
         return ResponseEntity.ok(ativoService.obterPorId(id));
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<AtivoResponseDTO>> obterLista(){
 
         List<AtivoResponseDTO> lista = ativoService.obterLista();
@@ -61,6 +67,7 @@ public class AtivoController {
     }
 
     @DeleteMapping(value = "/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> excluir(@PathVariable Integer id){
         ativoService.excluir(id);
         return ResponseEntity.noContent().build();

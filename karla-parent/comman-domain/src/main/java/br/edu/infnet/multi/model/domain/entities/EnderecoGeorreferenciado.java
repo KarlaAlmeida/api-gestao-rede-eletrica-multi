@@ -45,7 +45,7 @@ public class EnderecoGeorreferenciado {
     private String longitude;
 
     @Column(name = "numero", length = 10)
-    private int numero;
+    private Integer numero;
 
     @Column(name = "complemento_numero", length = 100)
     private String complementoNumero;
