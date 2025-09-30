@@ -61,4 +61,4 @@ Este é o módulo principal da aplicação. Ele contém a lógica de orquestraç
     java -jar main-app/target/main-app-0.0.1-SNAPSHOT.jar
     ```
 
-A aplicação estará disponível em `http://localhost:8080`.
+A aplicação estará disponível em `http://localhost:8081`.
