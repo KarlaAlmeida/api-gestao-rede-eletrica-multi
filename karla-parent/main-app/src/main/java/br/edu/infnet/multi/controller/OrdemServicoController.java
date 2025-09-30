@@ -8,7 +8,6 @@ import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -25,13 +24,11 @@ public class OrdemServicoController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<OrdemServicoResponseDTO> incluir(@Valid @RequestBody OrdemServicoRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(ordemServicoService.incluir(dto));
     }
 
     @PutMapping(value = "/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<OrdemServicoResponseDTO> alterar(@PathVariable Integer id,
                                                 @Valid @RequestBody OrdemServicoRequestDTO dto) {
         if (dto == null) {
@@ -41,14 +38,12 @@ public class OrdemServicoController {
     }
 
     @PatchMapping(value = "/{id}/status")
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<OrdemServicoResponseDTO> alterarStatus(@PathVariable Integer id,
                                                       @RequestParam String statusOS){
         return ResponseEntity.ok(ordemServicoService.alterarStatus(id, statusOS));
     }
 
     @PatchMapping(value = "/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<OrdemServicoResponseDTO> alterarDataConclusao(@PathVariable Integer id,
                                                              @Valid @RequestBody
                                                              OrdemServicoAlteraDataConclusaoDTO dataConclusao){
@@ -56,13 +51,11 @@ public class OrdemServicoController {
     }
 
     @GetMapping(value = "/{id}")
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<OrdemServicoResponseDTO> obterPorId(@PathVariable Integer id){
         return ResponseEntity.ok(ordemServicoService.obterPorId(id));
     }
 
     @GetMapping
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<OrdemServicoResponseDTO>> obterLista(){
 
         List<OrdemServicoResponseDTO> lista = ordemServicoService.obterLista();
@@ -75,13 +68,11 @@ public class OrdemServicoController {
     }
 
     @GetMapping("/tecnico/{cpf}")
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public List<OrdemServicoResponseDTO> listarPorTecnico(@PathVariable String cpf) {
         return ordemServicoService.listarPorTecnico(cpf);
     }
 
     @GetMapping("filtro/descricao-e-periodo")
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public List<OrdemServicoResponseDTO> filtrarPorDescricaoServicoEPeriodo(
             @RequestParam String descricaoBusca,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataInicio,
@@ -90,7 +81,6 @@ public class OrdemServicoController {
     }
 
     @DeleteMapping(value = "/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> excluir(@PathVariable Integer id){
         ordemServicoService.excluir(id);
         return ResponseEntity.noContent().build();

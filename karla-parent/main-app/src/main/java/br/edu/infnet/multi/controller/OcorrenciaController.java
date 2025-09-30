@@ -23,13 +23,11 @@ public class OcorrenciaController {
     }
 
     @PostMapping
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<OcorrenciaResponseDTO> incluir(@Valid @RequestBody OcorrenciaRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(ocorrenciaService.incluir(dto));
     }
 
     @PutMapping(value = "/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<OcorrenciaResponseDTO> alterar(@PathVariable Integer id,
                                                          @Valid @RequestBody OcorrenciaRequestDTO dto) {
 
@@ -41,21 +39,18 @@ public class OcorrenciaController {
     }
 
     @PatchMapping(value = "/{id}/status")
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<OcorrenciaResponseDTO> alterarStatus(@PathVariable Integer id,
                                                     @RequestParam String statusOcorrencia){
         return ResponseEntity.ok(ocorrenciaService.alterarStatus(id, statusOcorrencia));
     }
 
     @GetMapping(value = "/{id}")
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<OcorrenciaResponseDTO> obterPorId(@PathVariable Integer id){
 
         return ResponseEntity.ok(ocorrenciaService.obterPorId(id));
     }
 
     @GetMapping
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<OcorrenciaResponseDTO>> obterLista(){
 
         List<OcorrenciaResponseDTO> lista = ocorrenciaService.obterLista();
@@ -68,7 +63,6 @@ public class OcorrenciaController {
     }
 
     @DeleteMapping(value = "/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> excluir(@PathVariable Integer id){
         ocorrenciaService.excluir(id);
         return ResponseEntity.noContent().build();

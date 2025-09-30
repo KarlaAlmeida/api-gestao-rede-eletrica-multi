@@ -38,11 +38,4 @@ public class OcorrenciaResponseDTO {
         this.setStatusOcorrencia(ocorrencia.getStatusOcorrencia());
     }
 
-    @Override
-    public String toString() {
-        return String.format("Ocorrência - ID: %d - %s - Descrição: %s - Data da Ocorrência %s" +
-                        " Prioridade: %s - Status: %s",
-                id, ativo, descricaoOcorrencia, dataRegistroOcorrencia,
-                prioridadeOcorrencia, statusOcorrencia);
-    }
 }

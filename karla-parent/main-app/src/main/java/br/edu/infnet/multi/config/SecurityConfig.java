@@ -2,6 +2,7 @@ package br.edu.infnet.multi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -26,6 +27,19 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/h2-console/**").permitAll()
+
+                        .requestMatchers(HttpMethod.POST, "api/ocorrencias" ).hasAnyRole("ADMIN", "USER")
+                        .requestMatchers(HttpMethod.PUT, "api/ocorrencias/{id}" ).hasAnyRole("ADMIN")
+                        .requestMatchers(HttpMethod.PATCH, "api/ocorrencias/{id}/status" ).hasAnyRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "api/ocorrencias/**" ).hasAnyRole("ADMIN", "USER")
+                        .requestMatchers(HttpMethod.DELETE, "api/ocorrencias/{id}" ).hasAnyRole("ADMIN")
+
+                        .requestMatchers(HttpMethod.POST, "api/ordem-servico" ).hasAnyRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "api/ordem-servico/{id}" ).hasAnyRole("ADMIN")
+                        .requestMatchers(HttpMethod.PATCH, "api/ordem-servico/{id}/**" ).hasAnyRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "api/ordem-servico/**" ).hasAnyRole("ADMIN", "USER")
+                        .requestMatchers(HttpMethod.DELETE, "api/ordem-servico/{id}" ).hasAnyRole("ADMIN")
+
                         .anyRequest().authenticated())
                 .httpBasic(withDefaults());
 
