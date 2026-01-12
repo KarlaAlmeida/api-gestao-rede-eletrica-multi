@@ -1,0 +1,3 @@
+Karla;12345678900;karlacrika@gmail.com;83996220199;5000;true;Elétrica;true;59150-015
+João;98765432111;joao.silva@email.com;11987654321;4200;true;Mecânica;false;58415-625
+Ana;45678912322;ana.lima@email.com;21991234567;4800;false;Telecomunicações;true;58400-300

@@ -1,0 +1,1 @@
+1;Poste atingido por um carro e está pendendo;ALTA
